@@ -2,11 +2,23 @@
   "inventory": [
     {
       "name": "Dragon Egde",
-      "count": 1
+      "count": 2
     },
     {
       "name": "Perseveranse",
+      "count": 4
+    },
+         {
+      "name": "Sacred Relic",
+      "count": 1
+    },
+        {
+      "name": "Ultimate Orb",
       "count": 3
+    },
+            {
+      "name": "Gold",
+      "count": 9999
     },
         {
       "name": "Quelling Blade",
@@ -26,8 +38,55 @@
           "count": 1
         },
                 {
-          "name": " Quelling Blade",
+          "name": "Perseveranse",
+          "count": 300
+        },
+                {
+          "name": "Quelling Blade",
           "count": 1
+        }
+      ]
+    }
+    {
+      "name": "Divine Rapire",
+      "list": [
+        {
+          "name": "Dragon Egde",
+          "count": 1
+        },
+                {
+          "name": "Sarced Relic",
+          "count": 1
+        }
+      ]
+    }
+    {
+      "name": "Linken's Sphere",
+      "list": [
+        {
+          "name": "Ultimate Orb",
+          "count": 1
+        },
+                {
+          "name": "Gold",
+          "count": 1300
+        },
+                {
+          "name": "Perseveranse",
+          "count": 1
+        }
+      ]
+    }
+    {
+      "name": "Refresher Orb",
+      "list": [
+        {
+          "name": "Perseveranse",
+          "count": 2
+        },
+                {
+          "name": "Gold",
+          "count": 1800
         }
       ]
     }
