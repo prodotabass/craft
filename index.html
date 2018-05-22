@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Крафт предметов</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <div id="app" class="container" style="padding-top: 50px">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Ваш инвентарь</h2>
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>Название предмета</th>
+            <th>Количество</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr v-for="predmet in inventory">
+              <td>{{predmet.name}}</td>
+              <td>{{predmet.count}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-8">
+        <h2>Список рецептов</h2>
+        <div class="col-md-6" v-for="recept in recepts" style="border: 2px dashed #222">
+          <h4>{{recept.name}}</h4>
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>Название предмета</th>
+              <th>Количество</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr v-for="predmet in recept.list">
+                <td>{{predmet.name}}</td>
+                <td>{{predmet.count}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="btn btn-success" @click="craft(recept)">Попробовать собрать</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    class Predmet {
+      constructor(name, count) {
+        this.name = name
+        this.count = count
+      }
+    }
+    class Recept {
+      constructor(name, predmetList) {
+        this.name = name
+        this.list = predmetList
+      }
+    }
+
+  var app = new Vue({
+    el: '#app',
+    data: {
+      inventory: [],
+      recepts: []
+    },
+    created: function () {
+      this.fetchData()
+    },
+    methods: {
+      fetchData: function () {
+        this.$http.get('./data.json').then((response) => {
+          response.body.inventory.map(e => this.inventory.push(new Predmet(e.name, e.count)))
+          response.body.recepts.map(e => this.recepts.push(new Recept(e.name, e.list)))
+        }, (response) => {
+          alert("Неудалось загрузить список предметов")
+        })
+      },
+      craft: function (recept) {
+        if( this.check(recept)) {
+          for (let i = 0; i < recept.list.length; i++) {
+            for (let j = 0; j < this.inventory.length; j++){
+              if (recept.list[i].name == this.inventory[j].name){
+                this.inventory[j].count -= recept.list[i].count
+                continue
+              }
+            } 
+          }
+        this.addOnePredmet(recept.name)
+        } else {alert("В вашем инвенторе недостаточно предметов для сбора " + recept.name)}
+      },
+      check: function (recept) {
+        for (let i = 0; i < recept.list.length; i++) {
+          for (let j = 0; j < this.inventory.length; j++){
+            if (recept.list[i].name === this.inventory[j].name){
+              if (recept.list[i].count > this.inventory[j].count)
+                return false
+              else
+                continue
+            }
+          } 
+        }
+        return true
+      },
+      addOnePredmet: function(predmetName) {
+        for (let i = 0; i < this.inventory.length; i++) {
+          if (predmetName === this.inventory[i].name) {
+            this.inventory[i].count++
+            return
+          }
+        }
+        this.inventory.push(new Predmet(predmetName, 1))
+      }
+    }
+  })
+</script>
+</body>
+</html>
