@@ -31,23 +31,25 @@
       </div>
       <div class="col-md-8">
         <h2>Список рецептов</h2>
-        <div class="col-md-6" v-for="recept in recepts" style="border: 2px dashed #222">
-          <h4>{{recept.name}}</h4>
-          <table class="table table-hover">
-            <thead>
-            <tr>
-              <th>Название предмета</th>
-              <th>Количество</th>
-            </tr>
-            </thead>
-            <tbody>
-              <tr v-for="predmet in recept.list">
-                <td>{{predmet.name}}</td>
-                <td>{{predmet.count}}</td>
+        <div class="row">
+          <div class="col-md-5" v-for="recept in recepts" style="border: 2px dashed #222; margin: 10px">
+            <h4>{{recept.name}}</h4>
+            <table class="table table-hover">
+              <thead>
+              <tr>
+                <th>Название предмета</th>
+                <th>Количество</th>
               </tr>
-            </tbody>
-          </table>
-          <button class="btn btn-success" @click="craft(recept)">Попробовать собрать</button>
+              </thead>
+              <tbody>
+                <tr v-for="predmet in recept.list">
+                  <td>{{predmet.name}}</td>
+                  <td>{{predmet.count}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="btn btn-success" @click="craft(recept)">Попробовать собрать</button>
+          </div>
         </div>
       </div>
     </div>
