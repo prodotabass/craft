@@ -8,6 +8,14 @@
       "name": "Perseveranse",
       "count": 4
     },
+        {
+          "name": "Ring of Health",
+          "count": 1
+        },
+        {
+          "name": "Void Stone",
+          "count": 1
+        } ,
          {
       "name": "Sacred Relic",
       "count": 1
@@ -45,6 +53,19 @@
           "name": "Quelling Blade",
           "count": 1
         }
+      ]
+    },
+    {
+      "name": "Perseveranse",
+      "list": [
+        {
+          "name": "Ring of Health",
+          "count": 1
+        },
+        {
+          "name": "Void Stone",
+          "count": 1
+        }                
       ]
     },
     {
