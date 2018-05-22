@@ -1,24 +1,32 @@
 {
   "inventory": [
     {
-      "name": "Предмет 1",
-      "count": 20
+      "name": "Dragon Egde",
+      "count": 1
     },
     {
-      "name": "Предмет 2",
-      "count": 11
+      "name": "Perseveranse",
+      "count": 3
     }
+        {
+      "name": "Quelling Blade",
+      "count": 3
+    },
   ],
   "recepts": [
     {
-      "name": "Предмет по рецепту 1",
+      "name": "Battle Fury",
       "list": [
         {
-          "name": "Предмет 1",
+          "name": "Dragon Egde",
           "count": 1
         },
         {
-          "name": "Предмет 2",
+          "name": "Perseveranse",
+          "count": 1
+        },
+                {
+          "name": " Quelling Blade",
           "count": 1
         }
       ]
