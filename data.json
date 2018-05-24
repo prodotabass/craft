@@ -45,14 +45,12 @@
           "name": "Perseveranse",
           "count": 1
         },
-                {
-          "name": "Gold",
-          "count": 300
+              "name": "doble perseveranse",
+      "list": [
+        {
+          "name": "Perseveranse",
+          "count": 2
         },
-                {
-          "name": "Quelling Blade",
-          "count": 1
-        }
       ]
     },
     {
