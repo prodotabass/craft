@@ -44,11 +44,17 @@
         {
           "name": "Perseveranse",
           "count": 1
+        },
+                {
+          "name": "Gold",
+          "count": 300
+        },
+                {
+          "name": "Quelling Blade",
+          "count": 1
         }
-             
       ]
     },
-    
     {
       "name": "Perseveranse",
       "list": [
@@ -62,7 +68,6 @@
         }                
       ]
     },
-
     {
       "name": "Divine Rapire",
       "list": [
