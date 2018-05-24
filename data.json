@@ -55,6 +55,15 @@
         }
       ]
     },
+        {
+      "name": "Doble Perseveranse",
+      "list": [
+        {
+          "name": "Perseveranse",
+          "count": 1
+        }              
+      ]
+    },
     {
       "name": "Perseveranse",
       "list": [
