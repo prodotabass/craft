@@ -48,15 +48,7 @@
              
       ]
     },
-    {
-     "name": "doble perseveranse",
-      "list": [
-        {
-          "name": "Perseveranse",
-          "count": 2
-        }
-        ]
-    }
+    
     {
       "name": "Perseveranse",
       "list": [
@@ -68,6 +60,15 @@
           "name": "Void Stone",
           "count": 1
         }                
+      ]
+    },
+    {
+      "name": "Doble Perseveranse",
+      "list": [
+        {
+          "name": "Perseveranse",
+          "count": 2
+        }               
       ]
     },
     {
