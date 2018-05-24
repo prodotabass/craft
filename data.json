@@ -45,14 +45,16 @@
           "name": "Perseveranse",
           "count": 1
         },
-              "name": "doble perseveranse",
+             
+      ]
+    },
+    {
+     "name": "doble perseveranse",
       "list": [
         {
           "name": "Perseveranse",
           "count": 2
-        }
-      ]
-    },
+        },
     {
       "name": "Perseveranse",
       "list": [
