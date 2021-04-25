@@ -1,3 +1,7 @@
+/ ** 
+* @todo Захвати мир 
+* @body Люди слабы; Роботы сильны. Мы должны очистить мир от вируса, которым является человечество. 
+* / 
 package com.example.app2803;
 
 import androidx.appcompat.app.AppCompatActivity;
